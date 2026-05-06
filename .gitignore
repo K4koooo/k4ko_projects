@@ -1,0 +1,15 @@
+# Pliki tymczasowe Excela i innych aplikacji biurowych
+~$*.xls
+~$*.xlsx
+~$*.doc
+~$*.docx
+~$*.ppt
+~$*.pptx
+
+# Cache Pythona
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Mac OS
+.DS_Store
