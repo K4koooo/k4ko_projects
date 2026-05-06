@@ -1,0 +1,62 @@
+zaproponuj mi 3 różne dashbordy, których konsumentami będą zarząd i kierownik produkcji:
+
+
+
+
+
+
+
+zestaw statystyk dla kierownika produkcji i zarządzania
+
+zrozumieć czym jest ollama
+
+dostępne modele, jak to wdrożyć
+
+dodać to samo do danych wejściowych, jeśli potrzebne jest dodatkowe kontekst
+
+analiza pliku sql: 
+
+zdefiniuj tabele do wizualizacji
+
+zaproponuj wizualizacje na podstawie danych dostępnych w sql
+
+dostosuj wizualizacje do potrzeb użytkowników (zarząd, kierownik produkcji)
+
+zapewnij interaktywność wizualizacji (drążenie danych, filtrowanie, itp.)
+
+
+Zoptymalizowany prompt dla LLM:
+
+Role: Jesteś ekspertem w dziedzinie analityki biznesowej i wizualizacji danych. Twoim zadaniem jest analiza dostarczonych danych oraz przygotowanie propozycji nowoczesnych dashboardów.
+
+Kontekst: Analizuję dane z pliku Excel, który jest wyciągiem z ERP i przygotowuję propozycje dashboardów dla różnych grup docelowych. 
+
+Dane do analizy:
+- Excel raport wad marzec 2026 - katalog: surowy, nieprzetworzone dane - power BI nie daje rady tego ogarnąć.
+- Excel raport wad marzec 2026 - katalog_PowerBI: po obronieniu - da się go odczytać w power BI.
+
+Kryteria tworzenia dashboardów:
+- Dostosuj wizualizacje do potrzeb użytkowników (zarząd, kierownik produkcji, itd. - zdefiniuj je precyzyjnie).
+- Zapewnij interaktywność wizualizacji (drążenie danych, filtrowanie, itp.).
+- Wszelkie wizualizacje, które nie mogą być utworzone z powodu braku danych, oznacz jako "Brak danych" i zaproponuj alternatywne wizualizacje lub metody pozyskania danych.
+
+Oczekiwania:
+1. Zidentyfikuj kluczowe wskaźniki KPI dla każdej grupy docelowej.
+2. Zaproponuj 3 różne dashboardy z opisem poszczególnych elementów i ich celów.
+3. Wskaż, które wizualizacje są możliwe do utworzenia na podstawie dostarczonych danych, a które wymagają dodatkowych danych (oraz jakie to dane).
+4. Zaprezentuj dane w sposób jasny, zorientowany na działanie i łatwy do interpretacji.
+5. Uwzględnij najlepsze praktyki wizualizacji danych i analizy biznesowej.
+6. Firma oczekuje, że dashboardy zostaną przedstawione w power BI.
+
+Zrealizowałem Twój prompt! Z pomocą Pythona przeanalizowałem pliki Excel (surowy i ten dopasowany pod Power BI), odczytałem ich układ (kolumny: Wydział, Kierunek, Grupa ogólna, Wada, Ilość) i wcieliłem się w rolę eksperta analityki biznesowej.
+
+Przygotowałem profesjonalny raport z koncepcjami 3 docelowych dashboardów, podziałem na KPI oraz listą tzw. "lapsów" (brakujących danych).
+
+Pełny raport zapisałem w nowym pliku w folderze Twojego projektu: 📄 c:\Code_Antigravity\k4ko_projects\pol_skone\Nowy_plan\propozycje_dashboardow_PowerBI.md
+
+Oto krótkie podsumowanie tego, co znajdziesz w raporcie:
+
+Dla Zarządu: Raport wyższego poziomu z kartami KPI oraz oceną skali problemów per rynki zbytu. Ponieważ brakuje nam danych finansowych, zaproponowałem w raporcie rekomendację dodania danych kosztowych (Cost of Poor Quality).
+Dla Kierownika Produkcji: Dashbord "Daily" z zastosowaniem wykresu Pareto (szukanie kluczowych problemów 80/20) i interaktywnego drzewa dekompozycji do szukania wąskich gardeł po "Wydział -> Grupa ogólna -> Wada".
+Analityczny: Porównawczy profil usterek pokazujący na wykresach różnice między wysyłkami na Polskę a na Eksport. W raporcie podkreśliłem też krytyczny brak w danych: brakuje wymiaru daty/czasu, co na ten moment uniemożliwia badanie trendów.
+Plik możesz otworzyć w edytorze kodu. Daj znać, czy chcesz w nim wprowadzić jakieś poprawki, lub czy przechodzimy do kolejnych zadań z listy to_do!
