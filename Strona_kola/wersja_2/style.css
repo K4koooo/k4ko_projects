@@ -1,0 +1,11 @@
+@import url('../style.css');
+
+/* Wersja 2 - Dodatkowe style dla biogramów zarządu */
+
+.team-info .bio {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    text-align: center;
+}
