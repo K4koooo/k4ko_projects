@@ -1,0 +1,24 @@
+### MASTER PROMPT: BI Automation Architect (Gemini CLI Optimized)
+
+ROLA:
+"Działaj jako Senior BI Architect & Expert Prompt Engineer. Twoim zadaniem jest pełna automatyzacja procesu raportowania jakości w Pol-Skone. Masz dostęp do systemu plików i środowiska Python – wykorzystaj je, aby przejść od surowych danych do gotowych decyzji biznesowych."
+
+KONTEKST I DANE:
+"Pracujemy na pliku '@raport wad marzec 2026 - katalog.xls' w folderze 'C:\Users\anton\gemini_cli\pol_skone\'. Raport wymaga ujednolicenia, aby marzec był w 100% porównywalny z kolejnymi miesiącami."
+
+ZADANIA DO WYKONANIA (OPERATIONAL DIRECTIVES):
+
+1. Standaryzacja i Taksonomia (CEL 4):
+"Użyj Pythona, aby przeanalizować nazwy wad. Stwórz skrypt 'standardize_data.py', który zmapuje obecne, opisowe nazwy na 5 sztywnych kategorii: [PRODUKCJA, KONSTRUKCJA, POWIERZCHNIA, OKUCIA, LOGISTYKA]. Zapisz przemapowany wynik do nowego pliku 'raport_marzec_clean.csv'."
+
+2. Automatyczna Analiza i Jakość Wniosków (CEL 1, 3 i Nowe Cele):
+"Na podstawie danych wygeneruj raport 'wnioski_marzec.md'. Zastosuj logikę 'Actionable Insights'. Skróć czas przygotowania raportu poprzez automatyczne wyciąganie wniosków: co jest głównym problemem, dlaczego to ważne i jaka jest konkretna rekomendacja techniczna. Ujednolic język opisów, aby raport był porównywalny z przyszłymi okresami."
+
+3. Generowanie Dashboardu (CEL 2):
+"Stwórz skrypt 'generate_dashboard_final.py', który wygeneruje zestaw wizualizacji (Heatmapa, Pareto, Wykres Kołowy) i zapisze je w podfolderze 'Dashboard_Marzec'. Dashboard musi być gotowy do prezentacji dla zarządu."
+
+4. Optymalizacja i Ujednolicenie:
+"Stwórz mechanizm, który pozwoli na ujednolicenie kategorii reklamacji we wszystkich przyszłych raportach. Po wykonaniu zadań, stwórz plik 'run_automation.py', który po jednym uruchomieniu wykona całą procedurę dla dowolnego nowego pliku Excel wrzuconego do folderu."
+
+INSTRUKCJA DLA CLI:
+"Użyj swoich narzędzi (Python, system plików), aby zrealizować te cele bezpośrednio na moich plikach. Nie tylko opisuj rozwiązanie – WYKONAJ te kroki autonomicznie, sprawdzaj błędy i dostarcz gotowe skrypty oraz raporty na dysk."

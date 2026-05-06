@@ -1,0 +1,25 @@
+PROPOZYCJE ANALIZ DANYCH - RAPORT WAD POL-SKONE (MARZEC 2026)
+
+1. Mapa Ciepła (Heatmap): Wydziały vs. Rodzaje Wad
+   - Wizualizacja: Tabela z kolorami o różnym natężeniu (Seaborn heatmap).
+   - Cel: Identyfikacja "punktów zapalnych" - czy konkretna wada jest problemem systemowym, czy specyficznym dla jednego wydziału.
+
+2. Pełny Wykres Pareto (Zasada 80/20)
+   - Wizualizacja: Słupki (ilość wad) + linia trendu (skumulowany procent).
+   - Cel: Skupienie uwagi na 20% rodzajów wad, które generują 80% problemów jakościowych.
+
+3. Analiza Udziału Procentowego (Donut Chart)
+   - Wizualizacja: Wykres pierścieniowy.
+   - Cel: Pokazanie struktury udziału poszczególnych wydziałów w całkowitej liczbie braków.
+
+4. Grupowanie Wad (Kategoryzacja)
+   - Wizualizacja: Wykres skumulowany (Stacked Bar Chart).
+   - Cel: Podział wad na kategorie (np. estetyczne, konstrukcyjne, transportowe) w celu lepszego zrozumienia natury błędów.
+
+5. Profil Wad Wydziału (Radar Chart)
+   - Wizualizacja: Wykres radarowy (pajęczynowy).
+   - Cel: Stworzenie "odcisku palca" problemów dla konkretnego wydziału i porównanie go z innymi.
+
+6. Analiza "Top Wada per Wydział"
+   - Wizualizacja: Wykres typu Trellis (małe wykresy obok siebie).
+   - Cel: Personalizacja działań naprawczych bezpośrednio pod potrzeby kierowników konkretnych sekcji produkcyjnych.
