@@ -1,0 +1,30 @@
+// === PAKIET KODÓW DAX DLA RAPORTU ===
+// Poniżej znajdują się formuły, które należy wykorzystać do stworzenia
+// profesjonalnych Miar (Measures) w Power BI.
+
+// WAŻNE: Kody zakładają, że zaimportowana tabela nazywa się 'Tabela_Wad'.
+// Jeśli u Ciebie nazywa się np. 'Arkusz1', po prostu zamień tę nazwę w kodzie.
+
+// ---------------------------------------------------------
+// 1. Podstawowa miara sumująca łączną ilość wad (agregacja)
+Suma Wad = SUM('Tabela_Wad'[Ilość])
+
+// ---------------------------------------------------------
+// 2. Ilość Wad odfiltrowana tylko dla Rynku Krajowego (Polska)
+Wady PL = CALCULATE([Suma Wad], 'Tabela_Wad'[Kierunek] = "PL")
+
+// ---------------------------------------------------------
+// 3. Ilość Wad odfiltrowana tylko dla Eksportu
+Wady EX = CALCULATE([Suma Wad], 'Tabela_Wad'[Kierunek] = "EX")
+
+// ---------------------------------------------------------
+// 4. Udział procentowy (jaką część wszystkich wad stanowi dana wada w wybranym kontekście)
+// Funkcja DIVIDE jest bezpieczniejsza niż zwykłe dzielenie, bo zapobiega błędowi dzielenia przez zero.
+% Wad = DIVIDE([Suma Wad], CALCULATE([Suma Wad], ALL('Tabela_Wad')))
+
+// ---------------------------------------------------------
+// 5. [Opcjonalnie] Szacowana Strata Finansowa
+// Umożliwia działanie karty KPI z kwotą z mockupu. 
+// Do celów poglądowych przyjęliśmy uśredniony koszt obsługi błędu na poziomie 150 PLN. 
+Szacowana Strata Finansowa = [Suma Wad] * 150
+// (Po wpisaniu tej miary kliknij na nią w panelu Pól i w zakładce "Narzędzia miar" na górze, zmień jej format na Walutę 'zł').
