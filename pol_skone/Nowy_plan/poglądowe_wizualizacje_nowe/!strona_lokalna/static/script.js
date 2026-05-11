@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const formData = new FormData();
             formData.append('prompt', message);
-            // formData.append('model', 'llama3'); // Domyślne w backendzie
+            // formData.append('model', 'qwen2.5'); // Domyślne w backendzie
 
             const response = await fetch('/api/chat', {
                 method: 'POST',
