@@ -63,7 +63,7 @@ async def download_file(filename: str):
     return {"error": "Plik nie istnieje."}
 
 @app.post("/api/chat")
-async def chat_with_ollama(prompt: str = Form(...), model: str = Form("qwen2.5")):
+async def chat_with_ollama(prompt: str = Form(...), model: str = Form("qwen3.6")):
     """
     Prosty endpoint przekazujący zapytanie do lokalnej instancji Ollama.
     Na tym etapie działa jako przelotka (proxy) do lokalnego modelu.
