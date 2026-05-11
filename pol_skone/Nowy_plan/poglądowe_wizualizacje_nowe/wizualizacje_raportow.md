@@ -17,5 +17,12 @@ Poniżej znajdują się wygenerowane koncepcje 3 dashboardów opisanych w specyf
 ## 5. Koncepcja UI: Corporate Jasny (Pol-Skone) z Panelem Filtrów
 ![Koncepcja Corporate Jasna](./pol_skone_corporate_dashboard_1778487709647.png)
 
-## 6. Executive Quality Overview (Wersja v3 - Poprawione marginesy)
+## 6. Nowy - Executive Quality Overview
+![Executive Quality Overview Nowy](./dashboard_executive_overview_new.png)
+
+## 7. Nowy - Production Quality Control
+![Production Quality Control Nowy](./dashboard_production_quality_new.png)
+
+## 8. Nowy - Cross-Analysis: Market vs. Defect
+![Cross-Analysis Nowy](./dashboard_cross_analysis_new.png)
 ![Executive Quality Overview v3](./DAX/wiz_executive_overview_v3.png)

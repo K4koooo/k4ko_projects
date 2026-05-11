@@ -12,7 +12,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadLink = document.getElementById('download-link');
     const chatContext = document.getElementById('chat-context');
 
+    // --- Elementy Zakładek ---
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    // Obsługa przełączania zakładek
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Usuń klasę active z innych przycisków
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Ukryj wszystkie panele
+            tabPanels.forEach(panel => {
+                panel.style.display = 'none';
+            });
+
+            // Pokaż docelowy panel
+            const targetId = btn.getAttribute('data-target');
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+                targetPanel.style.display = 'flex';
+            }
+        });
+    });
+
     let selectedFile = null;
+    let processedFilename = ''; // nazwa pliku po przetworzeniu (_forPowerFI.xlsx)
+
+    // --- Inicjalizacja: pobierz ostatni przetworzony plik z serwera ---
+    (async () => {
+        try {
+            const res = await fetch('/api/current-file');
+            const data = await res.json();
+            if (data.filename) {
+                processedFilename = data.filename;
+                // Ustaw etykietę "Aktualny plik" w nagłówku czatu
+                const nameWithoutSuffix = data.filename.replace('_forPowerFI.xlsx', '');
+                chatContext.textContent = nameWithoutSuffix;
+                console.log('[Chat] Przywrócono kontekst pliku:', processedFilename);
+            }
+        } catch (e) {
+            console.warn('[Chat] Nie udało się pobrać aktualnego pliku:', e);
+        }
+    })();
 
     // --- Obsługa Drag & Drop ---
     dropZone.addEventListener('dragover', (e) => {
@@ -100,6 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusMessage.style.color = 'var(--ps-green-dark)';
                 downloadLink.href = data.download_url;
                 downloadLink.classList.remove('hidden');
+                
+                // Zapamiętaj nazwę przetworzonego pliku — serwer zwraca ją bezpośrednio
+                processedFilename = data.processed_filename || `${selectedFile.name.substring(0, selectedFile.name.lastIndexOf('.'))}_forPowerFI.xlsx`;
+                console.log('[Chat] Kontekst pliku ustawiony:', processedFilename);
             } else {
                 statusMessage.textContent = data.error;
                 statusMessage.style.color = 'red';
@@ -137,7 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const formData = new FormData();
             formData.append('prompt', message);
-            // formData.append('model', 'qwen2.5'); // Domyślne w backendzie
+            if (processedFilename) {
+                formData.append('filename', processedFilename);
+            }
 
             const response = await fetch('/api/chat', {
                 method: 'POST',

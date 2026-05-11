@@ -24,11 +24,21 @@
             </div>
         </header>
 
-        <!-- Główna zawartość podzielona na kolumny -->
+        <!-- Nawigacja zakładek -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" data-target="upload-panel">
+                <i class="fas fa-file-excel"></i> Oczyszczanie Pliku
+            </button>
+            <button class="tab-btn" data-target="chat-panel">
+                <i class="fas fa-robot"></i> Asystent Ollama
+            </button>
+        </div>
+
+        <!-- Główna zawartość -->
         <main class="main-content">
             
-            <!-- Lewa Kolumna: Przetwarzanie plików -->
-            <section class="panel upload-panel">
+            <!-- Zakładka: Przetwarzanie plików -->
+            <section class="panel tab-panel active" id="upload-panel">
                 <div class="panel-header">
                     <h2><i class="fas fa-file-excel"></i> Przetwarzanie Raportów</h2>
                     <p>Wgraj plik .xls lub .xlsx, aby oczyścić dane pod Power BI.</p>
@@ -63,12 +73,12 @@
                 </div>
             </section>
 
-            <!-- Prawa Kolumna: Chatbot Ollama -->
-            <section class="panel chat-panel">
+            <!-- Zakładka: Chatbot Ollama -->
+            <section class="panel tab-panel" id="chat-panel" style="display: none;">
                 <div class="panel-header chat-header">
                     <div class="chat-title-group">
                         <h2><i class="fas fa-robot"></i> Asystent AI</h2>
-                        <span class="badge">Model: Ollama (qwen2.5)</span>
+                        <span class="badge">Model: Ollama (qwen2.5:3b)</span>
                     </div>
                     <div class="context-info">
                         <i class="fas fa-database"></i> Aktualny plik: <span id="chat-context">Brak pliku</span>
