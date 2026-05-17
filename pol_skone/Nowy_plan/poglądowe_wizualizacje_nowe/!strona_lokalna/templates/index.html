@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- Ikony -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Pasek nawigacji -->
@@ -30,13 +32,13 @@
                 <i class="fas fa-file-excel"></i> Oczyszczanie Pliku
             </button>
             <button class="tab-btn" data-target="chat-panel">
-                <i class="fas fa-robot"></i> Asystent Ollama
+                <i class="fas fa-robot"></i> Analityk AI
             </button>
         </div>
 
         <!-- Główna zawartość -->
         <main class="main-content">
-            
+
             <!-- Zakładka: Przetwarzanie plików -->
             <section class="panel tab-panel active" id="upload-panel">
                 <div class="panel-header">
@@ -88,14 +90,16 @@
                 <div class="chat-window" id="chat-window">
                     <div class="message ai-message">
                         <div class="message-content">
-                            Witaj! Jestem asystentem analitycznym Pol-Skone. Wgraj raport i zadaj mi pytanie odnośnie danych dotyczących wad produkcyjnych.
+                            Witaj! Jestem asystentem analitycznym Pol-Skone. Wgraj raport i zadaj mi pytanie odnośnie
+                            danych dotyczących wad produkcyjnych.
                         </div>
                     </div>
                 </div>
 
                 <div class="chat-input-area">
                     <form id="chat-form" class="chat-form">
-                        <input type="text" id="chat-input" placeholder="Zadaj pytanie asystentowi..." autocomplete="off">
+                        <input type="text" id="chat-input" placeholder="Zadaj pytanie asystentowi..."
+                            autocomplete="off">
                         <button type="submit" class="btn-send" id="send-btn">
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -108,4 +112,5 @@
 
     <script src="/static/script.js"></script>
 </body>
+
 </html>
