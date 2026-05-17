@@ -1,0 +1,179 @@
+﻿Wydział;Kierunek;Grupa_ogolna;Wada;Ilosc;Kategoria_wady
+Z2WF;PL;Futryny;Brak w dostawie - Brak w dostawie;1;Brak w dostawie
+Z1WD;PL;Drzwi;Błąd produkcji  - błąd frezowania;1;Błędy produkcji
+Z1WD;PL;Futryny;Błąd produkcji  - błąd frezowania;6;Błędy produkcji
+Z2WD;PL;Drzwi;Błąd produkcji  - błąd frezowania;4;Błędy produkcji
+Z2WF;EX;Futryny;Błąd produkcji  - błąd frezowania;1;Błędy produkcji
+Z2WF;PL;Futryny;Błąd produkcji  - błąd frezowania;6;Błędy produkcji
+Z3WD;EX;Futryny;Błąd produkcji  - błąd frezowania;1;Błędy produkcji
+Z3WD;PL;Drzwi;Błąd produkcji  - błąd frezowania;2;Błędy produkcji
+Z3WD;PL;Futryny;Błąd produkcji  - błąd frezowania;4;Błędy produkcji
+Z4WD;PL;Drzwi;Błąd produkcji  - błąd frezowania;1;Błędy produkcji
+Z4WD;PL;Futryny;Błąd produkcji  - błąd frezowania;1;Błędy produkcji
+Z4WF;PL;Futryny;Błąd produkcji  - błąd frezowania;2;Błędy produkcji
+Z1WD;PL;Drzwi;Błąd produkcji - nieprawidłowe wymiary;2;Błędy produkcji
+Z1WD;PL;Futryny;Błąd produkcji - nieprawidłowe wymiary;2;Błędy produkcji
+Z1WD;PL;Listwa,opaska,panel kpl;Błąd produkcji - nieprawidłowe wymiary;2;Błędy produkcji
+Z2WD;PL;Drzwi;Błąd produkcji - nieprawidłowe wymiary;3;Błędy produkcji
+Z2WF;EX;Futryny;Błąd produkcji - nieprawidłowe wymiary;1;Błędy produkcji
+Z2WF;EX;Listwa,opaska,panel kpl;Błąd produkcji - nieprawidłowe wymiary;1;Błędy produkcji
+Z2WF;PL;Futryny;Błąd produkcji - nieprawidłowe wymiary;25;Błędy produkcji
+Z3WD;EX;Drzwi;Błąd produkcji - nieprawidłowe wymiary;1;Błędy produkcji
+Z3WD;PL;Drzwi;Błąd produkcji - nieprawidłowe wymiary;1;Błędy produkcji
+Z3WD;PL;Futryny;Błąd produkcji - nieprawidłowe wymiary;10;Błędy produkcji
+Z3WD;PL;Listwa,opaska,panel kpl;Błąd produkcji - nieprawidłowe wymiary;3;Błędy produkcji
+Z4WD;PL;Futryny;Błąd produkcji - nieprawidłowe wymiary;13;Błędy produkcji
+Z1WD;PL;Drzwi;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;2;Błędy produkcji
+Z1WD;PL;Futryny;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;2;Błędy produkcji
+Z2WF;PL;Drzwi;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;2;Błędy produkcji
+Z2WF;PL;Futryny;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;1;Błędy produkcji
+Z2WF;PL;Listwa,opaska,panel kpl;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;2;Błędy produkcji
+Z3WD;PL;Drzwi;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;1;Błędy produkcji
+Z3WD;PL;Listwa,opaska,panel kpl;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;1;Błędy produkcji
+Z4WD;PL;Futryny;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;1;Błędy produkcji
+Z4WF;EX;Futryny;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;1;Błędy produkcji
+Z4WF;PL;Futryny;Błąd produkcji - niezgodność z zamówieniem, konfiguracją;1;Błędy produkcji
+Z1WD;PL;Drzwi;Błąd produkcji - odklejanie wystroi/ramek/wstawek aluminiowych;9;Błędy produkcji
+Z2WF;EX;Drzwi;Błąd produkcji - odklejanie wystroi/ramek/wstawek aluminiowych;1;Błędy produkcji
+Z3WD;PL;Drzwi;Błąd produkcji - odklejanie wystroi/ramek/wstawek aluminiowych;2;Błędy produkcji
+Z1WD;PL;Drzwi;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;1;Niezgodność z zamówieniem
+Z1WD;PL;Futryny;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;1;Niezgodność z zamówieniem
+Z2WD;EX;Drzwi;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;1;Niezgodność z zamówieniem
+Z2WD;PL;Drzwi;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;2;Niezgodność z zamówieniem
+Z2WF;PL;Drzwi;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;4;Niezgodność z zamówieniem
+Z2WF;PL;Futryny;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;6;Niezgodność z zamówieniem
+Z2WF;PL;Listwa,opaska,panel kpl;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;2;Niezgodność z zamówieniem
+Z3WD;PL;Drzwi;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;4;Niezgodność z zamówieniem
+Z3WD;PL;Futryny;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;3;Niezgodność z zamówieniem
+Z4WF;PL;Drzwi;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;1;Niezgodność z zamówieniem
+Z4WF;PL;Futryny;Niezgodność z zamówieniem (brak okuć pozostałe poza całymi zawiasami)- Niewłaściwa realizacja zamówienia - błąd w produkcji;5;Niezgodność z zamówieniem
+Z2WD;PL;Drzwi;Niezgodność z zamówieniem (brak okuć wszystkie całe zawiasy)- Niewłaściwa realizacja zamówienia -błąd w produkcji;4;Niezgodność z zamówieniem
+Z2WF;PL;Futryny;Niezgodność z zamówieniem (brak okuć wszystkie całe zawiasy)- Niewłaściwa realizacja zamówienia -błąd w produkcji;4;Niezgodność z zamówieniem
+Z3WD;EX;Futryny;Niezgodność z zamówieniem (brak okuć wszystkie całe zawiasy)- Niewłaściwa realizacja zamówienia -błąd w produkcji;1;Niezgodność z zamówieniem
+Z3WD;PL;Drzwi;Niezgodność z zamówieniem (brak okuć wszystkie całe zawiasy)- Niewłaściwa realizacja zamówienia -błąd w produkcji;1;Niezgodność z zamówieniem
+Z3WD;PL;Futryny;Niezgodność z zamówieniem (brak okuć wszystkie całe zawiasy)- Niewłaściwa realizacja zamówienia -błąd w produkcji;1;Niezgodność z zamówieniem
+Z4WF;PL;Futryny;Niezgodność z zamówieniem (brak okuć wszystkie całe zawiasy)- Niewłaściwa realizacja zamówienia -błąd w produkcji;1;Niezgodność z zamówieniem
+Z1WD;PL;Drzwi;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;3;Niezgodność z zamówieniem
+Z1WD;PL;Futryny;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;7;Niezgodność z zamówieniem
+Z2WD;EX;Drzwi;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;9;Niezgodność z zamówieniem
+Z2WD;PL;Drzwi;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;2;Niezgodność z zamówieniem
+Z2WF;EX;Drzwi;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;3;Niezgodność z zamówieniem
+Z2WF;EX;Futryny;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;2;Niezgodność z zamówieniem
+Z2WF;PL;Drzwi;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;2;Niezgodność z zamówieniem
+Z2WF;PL;Futryny;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;2;Niezgodność z zamówieniem
+Z3WD;EX;Futryny;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;4;Niezgodność z zamówieniem
+Z3WD;PL;Drzwi;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;6;Niezgodność z zamówieniem
+Z3WD;PL;Futryny;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;19;Niezgodność z zamówieniem
+Z4WD;PL;Drzwi;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;3;Niezgodność z zamówieniem
+Z4WD;PL;Futryny;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;1;Niezgodność z zamówieniem
+Z4WF;PL;Futryny;Niezgodność z zamówieniem (pomylone okucia)- Niewłaściwa realizacja zamówienia -błąd w produkcji;2;Niezgodność z zamówieniem
+Z2WD;EX;Drzwi;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;1;Niezgodność z zamówieniem
+Z2WD;PL;Drzwi;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;2;Niezgodność z zamówieniem
+Z2WF;PL;Futryny;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;1;Niezgodność z zamówieniem
+Z3WD;EX;Listwa,opaska,panel kpl;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;1;Niezgodność z zamówieniem
+Z3WD;PL;Drzwi;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;3;Niezgodność z zamówieniem
+Z3WD;PL;Futryny;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;1;Niezgodność z zamówieniem
+Z3WD;PL;Listwa,opaska,panel szt;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;13;Niezgodność z zamówieniem
+Z4WD;PL;Drzwi;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;1;Niezgodność z zamówieniem
+Z4WD;PL;Futryny;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;1;Niezgodność z zamówieniem
+Z4WF;PL;Drzwi;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;1;Niezgodność z zamówieniem
+Z4WF;PL;Futryny;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd przy wprowadzaniu zamówienia;3;Niezgodność z zamówieniem
+Z3WD;PL;Drzwi;Niezgodność z zamówieniem - Niewłaściwa realizacja zamówienia -błąd wydania z magazynu;1;Niezgodność z zamówieniem
+Z2WD;PL;Drzwi;Uszkodzenia mechanczne - szyby;1;Uszkodzenia mechaniczne
+Z1WD;PL;Futryny;Uszkodzenia mechaniczne - inne;1;Uszkodzenia mechaniczne
+Z2WD;EX;Drzwi;Uszkodzenia mechaniczne - inne;1;Uszkodzenia mechaniczne
+Z2WF;PL;Drzwi;Uszkodzenia mechaniczne - inne;1;Uszkodzenia mechaniczne
+Z2WF;PL;Futryny;Uszkodzenia mechaniczne - inne;1;Uszkodzenia mechaniczne
+Z3WD;PL;Drzwi;Uszkodzenia mechaniczne - inne;2;Uszkodzenia mechaniczne
+Z3WD;PL;Futryny;Uszkodzenia mechaniczne - inne;5;Uszkodzenia mechaniczne
+Z1WD;EX;Drzwi;Uszkodzenia mechaniczne - obicia;1;Uszkodzenia mechaniczne
+Z1WD;PL;Drzwi;Uszkodzenia mechaniczne - obicia;2;Uszkodzenia mechaniczne
+Z1WD;PL;Futryny;Uszkodzenia mechaniczne - obicia;2;Uszkodzenia mechaniczne
+Z2WD;EX;Drzwi;Uszkodzenia mechaniczne - obicia;1;Uszkodzenia mechaniczne
+Z2WD;PL;Drzwi;Uszkodzenia mechaniczne - obicia;1;Uszkodzenia mechaniczne
+Z2WF;PL;Drzwi;Uszkodzenia mechaniczne - obicia;5;Uszkodzenia mechaniczne
+Z2WF;PL;Futryny;Uszkodzenia mechaniczne - obicia;22;Uszkodzenia mechaniczne
+Z3WD;PL;Drzwi;Uszkodzenia mechaniczne - obicia;3;Uszkodzenia mechaniczne
+Z3WD;PL;Futryny;Uszkodzenia mechaniczne - obicia;11;Uszkodzenia mechaniczne
+Z4WD;PL;Drzwi;Uszkodzenia mechaniczne - obicia;1;Uszkodzenia mechaniczne
+Z4WD;PL;Futryny;Uszkodzenia mechaniczne - obicia;1;Uszkodzenia mechaniczne
+Z1WD;PL;Drzwi;Uszkodzenia mechaniczne -rysy;1;Uszkodzenia mechaniczne
+Z2WF;EX;Futryny;Uszkodzenia mechaniczne -rysy;2;Uszkodzenia mechaniczne
+Z2WF;PL;Drzwi;Uszkodzenia mechaniczne -rysy;1;Uszkodzenia mechaniczne
+Z2WF;PL;Futryny;Uszkodzenia mechaniczne -rysy;14;Uszkodzenia mechaniczne
+Z3WD;PL;Futryny;Uszkodzenia mechaniczne -rysy;4;Uszkodzenia mechaniczne
+Z3WD;PL;Listwa,opaska,panel kpl;Uszkodzenia mechaniczne -rysy;1;Uszkodzenia mechaniczne
+Z2WF;PL;Futryny;Wada konstrukcji - Pęknięcie/rozklejanie ościeznicy/opasek;5;Wady konstrukcji
+Z3WD;PL;Futryny;Wada konstrukcji - Pęknięcie/rozklejanie ościeznicy/opasek;3;Wady konstrukcji
+Z4WD;PL;Futryny;Wada konstrukcji - Pęknięcie/rozklejanie ościeznicy/opasek;1;Wady konstrukcji
+Z2WF;PL;Drzwi;Wada konstrukcji - Pęknięcie/rozklejanie płyty skrzydła/ramiaka/ramy;2;Wady konstrukcji
+Z3WD;PL;Drzwi;Wada konstrukcji - Pęknięcie/rozklejanie płyty skrzydła/ramiaka/ramy;3;Wady konstrukcji
+Z4WD;PL;Drzwi;Wada konstrukcji - Pęknięcie/rozklejanie płyty skrzydła/ramiaka/ramy;1;Wady konstrukcji
+Z2WF;PL;Futryny;Wada konstrukcji - Wypaczenie ościeżnicy;2;Wady konstrukcji
+Z3WD;PL;Futryny;Wada konstrukcji - Wypaczenie ościeżnicy;3;Wady konstrukcji
+Z4WF;PL;Drzwi;Wada konstrukcji - Wypaczenie ościeżnicy;1;Wady konstrukcji
+Z1WD;PL;Drzwi;Wada konstrukcji - Wypaczenie skrzydła;3;Wady konstrukcji
+Z1WD;PL;Futryny;Wada konstrukcji - Wypaczenie skrzydła;2;Wady konstrukcji
+Z2WD;EX;Drzwi;Wada konstrukcji - Wypaczenie skrzydła;2;Wady konstrukcji
+Z2WD;PL;Drzwi;Wada konstrukcji - Wypaczenie skrzydła;9;Wady konstrukcji
+Z2WF;PL;Drzwi;Wada konstrukcji - Wypaczenie skrzydła;1;Wady konstrukcji
+Z3WD;PL;Drzwi;Wada konstrukcji - Wypaczenie skrzydła;9;Wady konstrukcji
+Z3WO;EX;Okna;Wada konstrukcji - Wypaczenie skrzydła;1;Wady konstrukcji
+Z4WD;PL;Drzwi;Wada konstrukcji - Wypaczenie skrzydła;9;Wady konstrukcji
+Z4WF;PL;Drzwi;Wada konstrukcji - drzwi Stalowe;5;Wady konstrukcji
+Z1WD;PL;Drzwi;Wada okuć - Blokowanie zamka Hobes;2;Wady okuć
+Z3WD;PL;Drzwi;Wada okuć - Blokowanie zamka Hobes;60;Wady okuć
+Z2WD;EX;Drzwi;Wada okuć - Blokowanie zamka listwowego LOB;1;Wady okuć
+Z2WD;PL;Drzwi;Wada okuć - Blokowanie zamka listwowego LOB;6;Wady okuć
+Z3WD;PL;Drzwi;Wada okuć - Blokowanie zamka listwowego LOB;1;Wady okuć
+Z1WD;PL;Drzwi;Wada okuć - Blokowanie zamka magnetycznego Hafele;3;Wady okuć
+Z2WF;PL;Drzwi;Wada okuć - Blokowanie zamka magnetycznego Hafele;6;Wady okuć
+Z3WD;PL;Drzwi;Wada okuć - Blokowanie zamka magnetycznego Hafele;11;Wady okuć
+Z4WD;PL;Drzwi;Wada okuć - Blokowanie zamka magnetycznego Hafele;6;Wady okuć
+Z3WD;PL;Futryny;Wada okuć - Ciężka praca zawiasów;1;Wady okuć
+Z1WD;PL;Drzwi;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);2;Wady okuć
+Z1WD;PL;Futryny;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);1;Wady okuć
+Z2WD;PL;Drzwi;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);20;Wady okuć
+Z2WF;PL;Futryny;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);9;Wady okuć
+Z3WD;PL;Drzwi;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);5;Wady okuć
+Z3WD;PL;Futryny;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);2;Wady okuć
+Z3WO;EX;Okna;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);1;Wady okuć
+Z4WD;PL;Drzwi;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);4;Wady okuć
+Z4WF;PL;Futryny;Wada okuć - Pozostały asortyment poza (zamkami, zawiasami);1;Wady okuć
+Z1WD;PL;Drzwi;Wada powierzchni - Odchodzenie obrzeża;1;Wady powierzchni
+Z3WD;PL;Drzwi;Wada powierzchni - Odchodzenie obrzeża;2;Wady powierzchni
+Z2WF;EX;Drzwi;Wada powierzchni - Powierzchnia ecotop/hightop/unimat plus (poza odchodzeniem foli);11;Wady powierzchni
+Z2WF;EX;Futryny;Wada powierzchni - Powierzchnia ecotop/hightop/unimat plus (poza odchodzeniem foli);8;Wady powierzchni
+Z2WF;PL;Drzwi;Wada powierzchni - Powierzchnia ecotop/hightop/unimat plus (poza odchodzeniem foli);33;Wady powierzchni
+Z2WF;PL;Futryny;Wada powierzchni - Powierzchnia ecotop/hightop/unimat plus (poza odchodzeniem foli);34;Wady powierzchni
+Z3WD;PL;Drzwi;Wada powierzchni - Powierzchnia ecotop/hightop/unimat plus (poza odchodzeniem foli);7;Wady powierzchni
+Z3WD;PL;Futryny;Wada powierzchni - Powierzchnia ecotop/hightop/unimat plus (poza odchodzeniem foli);7;Wady powierzchni
+Z2WD;PL;Drzwi;Wada powierzchni - Powierzchnia laminowana/lamistone/silikstone (poza odchodzeniem foli);1;Wady powierzchni
+Z2WF;EX;Futryny;Wada powierzchni - Powierzchnia laminowana/lamistone/silikstone (poza odchodzeniem foli);1;Wady powierzchni
+Z3WD;EX;Drzwi;Wada powierzchni - Powierzchnia laminowana/lamistone/silikstone (poza odchodzeniem foli);9;Wady powierzchni
+Z3WD;PL;Drzwi;Wada powierzchni - Powierzchnia laminowana/lamistone/silikstone (poza odchodzeniem foli);2;Wady powierzchni
+Z3WD;PL;Futryny;Wada powierzchni - Powierzchnia laminowana/lamistone/silikstone (poza odchodzeniem foli);3;Wady powierzchni
+Z3WD;PL;Drzwi;Wada powierzchni - Powierzchnia okleinowana;3;Wady powierzchni
+Z3WD;PL;Futryny;Wada powierzchni - Powierzchnia okleinowana;2;Wady powierzchni
+Z3WD;PL;Listwa,opaska,panel kpl;Wada powierzchni - Powierzchnia okleinowana;3;Wady powierzchni
+Z3WD;PL;Listwa,opaska,panel szt;Wada powierzchni - Powierzchnia okleinowana;10;Wady powierzchni
+Z1WD;PL;Drzwi;Wada powierzchni - powierzchnia malowana;31;Wady powierzchni
+Z1WD;PL;Futryny;Wada powierzchni - powierzchnia malowana;24;Wady powierzchni
+Z1WD;PL;Listwa,opaska,panel kpl;Wada powierzchni - powierzchnia malowana;2;Wady powierzchni
+Z3WD;PL;Drzwi;Wada powierzchni - powierzchnia malowana;3;Wady powierzchni
+Z3WD;PL;Futryny;Wada powierzchni - powierzchnia malowana;1;Wady powierzchni
+Z4WD;PL;Drzwi;Wada powierzchni - powierzchnia malowana;7;Wady powierzchni
+Z4WD;PL;Futryny;Wada powierzchni - powierzchnia malowana;8;Wady powierzchni
+Z4WF;PL;Drzwi;Wada powierzchni - powierzchnia malowana;1;Wady powierzchni
+Z4WD;EX;Futryny;Wada powierzchni - Łuszczenie faby ;1;Wady powierzchni
+Z4WD;PL;Drzwi;Wada powierzchni - Łuszczenie faby ;1;Wady powierzchni
+Z4WD;PL;Futryny;Wada powierzchni - Łuszczenie faby ;30;Wady powierzchni
+Z4WD;PL;Listwa,opaska,panel kpl;Wada powierzchni - Łuszczenie faby ;1;Wady powierzchni
+Z2WF;EX;Drzwi;Wada powierzchni- odchodzenie foli Powierzchnia ecotop/hightop/unimat plus;3;Wady powierzchni
+Z2WF;PL;Drzwi;Wada powierzchni- odchodzenie foli Powierzchnia ecotop/hightop/unimat plus;28;Wady powierzchni
+Z2WF;PL;Futryny;Wada powierzchni- odchodzenie foli Powierzchnia ecotop/hightop/unimat plus;12;Wady powierzchni
+Z3WD;PL;Drzwi;Wada powierzchni- odchodzenie foli Powierzchnia ecotop/hightop/unimat plus;12;Wady powierzchni
+Z3WD;PL;Futryny;Wada powierzchni- odchodzenie foli Powierzchnia ecotop/hightop/unimat plus;1;Wady powierzchni
+Z2WD;PL;Drzwi;Wada powierzchni- odchodzenie foli Powierzchnia laminowane/lamistone/silkstone;1;Wady powierzchni
+Z3WD;PL;Drzwi;Wada powierzchni- odchodzenie foli Powierzchnia laminowane/lamistone/silkstone;8;Wady powierzchni
+Z3WD;PL;Futryny;Wada powierzchni- odchodzenie foli Powierzchnia laminowane/lamistone/silkstone;1;Wady powierzchni

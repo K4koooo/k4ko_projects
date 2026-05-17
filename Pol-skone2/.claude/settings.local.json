@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(jupyter --version)",
+      "Bash(jupyter nbconvert *)",
+      "Bash(docker compose *)",
+      "Bash(echo \"PID=$!\")",
+      "Bash(curl -sf http://localhost:11434/api/tags)",
+      "Bash(curl -s http://localhost:11434/api/tags)",
+      "Bash(curl -sf http://localhost:11434/)",
+      "Bash(curl -v http://localhost:11434/api/tags)",
+      "Bash(curl -s http://localhost:8080/health)",
+      "Bash(curl -sf http://localhost:8080/health)",
+      "Bash(curl -s http://localhost:8080/stats)",
+      "Bash(pandoc --version)",
+      "Bash(npm list *)",
+      "Bash(pandoc --list-output-formats)",
+      "Bash(pandoc --list-pdf-engines)",
+      "Bash(pandoc --print-pdf-engine)",
+      "Bash(pandoc -o /tmp/test.pdf /dev/null)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --print-to-pdf=/Users/jakpiz/Pol-skone2/door-defects-chatbot/INSTRUKCJA_STUDENTA.pdf --print-to-pdf-no-header --no-pdf-header-footer file:///tmp/instrukcja_studenta.html)"
+    ]
+  }
+}
