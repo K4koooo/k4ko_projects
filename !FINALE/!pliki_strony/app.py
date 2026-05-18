@@ -7,7 +7,6 @@ import shutil
 import os
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-import httpx
 import pandas as pd
 import sys
 
@@ -30,8 +29,8 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
-# Domyślny URL dla lokalnej instancji Ollama
-OLLAMA_API_URL = "http://localhost:11434/api/generate"
+# URL Ollamy (startuje automatycznie z Windowsem)
+OLLAMA_BASE_URL = "http://localhost:11434"
 
 # Aktywny plik kontekstu (aktualizowany po każdym przetworzeniu)
 active_processed_file: str = ""
@@ -100,15 +99,12 @@ async def process_file(file: UploadFile = File(...)):
 async def get_current_file():
     """
     Zwraca nazwę ostatnio przetworzonego pliku.
-    Najpierw sprawdza pamięć serwera, potem folder uploads (po dacie modyfikacji).
     """
-    # 1) Użyj zapamiętanego pliku z bieżącej sesji
     if active_processed_file:
         path = os.path.join(UPLOAD_DIR, active_processed_file)
         if os.path.exists(path):
             return {"filename": active_processed_file}
 
-    # 2) Fallback — znajdź najnowszy plik _forPowerFI.xlsx w uploads
     try:
         pliki = [
             f for f in os.listdir(UPLOAD_DIR)
@@ -148,37 +144,55 @@ async def download_file(filename: str):
     return {"error": "Plik nie istnieje."}
 
 
-def _wczytaj_excel_sync(file_path: str) -> str:
-    """Synchroniczne czytanie Excel — uruchamiane w osobnym wątku."""
+def _run_pandas_agent_sync(file_path: str, prompt: str, model: str) -> str:
+    """
+    Uruchamia LangChain Pandas Agent z Ollama jako LLM.
+    Wykonywane w osobnym wątku (nie blokuje event loop).
+    """
     try:
+        from langchain_community.llms import Ollama
+        from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
+
         df = pd.read_excel(file_path)
-        # Ogranicz do max 80 wierszy — mały model ma mały kontekst
-        df_preview = df.head(80).fillna("")
 
-        # Podsumowanie statystyczne zamiast surowych danych
-        kolumny = list(df_preview.columns)
-        n_total = len(df)
-        n_preview = len(df_preview)
+        llm = Ollama(
+            base_url=OLLAMA_BASE_URL,
+            model=model,
+            temperature=0.0,
+            timeout=180,
+        )
 
-        # Nagłówek z listą kolumn
-        naglowek = f"Plik zawiera {n_total} wierszy i {len(kolumny)} kolumn.\nKolumny: {', '.join(str(c) for c in kolumny)}\n\n"
+        agent = create_pandas_dataframe_agent(
+            llm,
+            df,
+            verbose=False,
+            allow_dangerous_code=True,
+            handle_parsing_errors=True,
+        )
 
-        # Dane jako tabela tekstowa (pipe-separated)
-        wiersze = []
-        for _, row in df_preview.iterrows():
-            wiersze.append(" | ".join(str(v) for v in row.values))
+        odpowiedz = agent.run(
+            f"Odpowiedz po polsku, zwięźle i konkretnie. Pytanie: {prompt}"
+        )
+        return str(odpowiedz)
 
-        tabela = f"Dane (pierwsze {n_preview} z {n_total} wierszy):\n{' | '.join(str(c) for c in kolumny)}\n" + "\n".join(wiersze)
-
-        return naglowek + tabela
     except Exception as e:
-        return f"[Błąd odczytu pliku: {str(e)}]"
+        raise RuntimeError(str(e))
 
 
-async def wczytaj_kontekst_pliku(filename: str) -> str:
-    """Asynchroniczne wczytanie danych z Excel — nie blokuje event loop."""
+@app.post("/api/chat")
+async def chat(
+    prompt: str = Form(...),
+    model: str = Form("qwen2.5:3b"),
+    filename: str = Form("")
+):
+    """
+    Endpoint czatu — używa LangChain Pandas Agent z Ollama.
+    Agent nie czyta surowego tekstu pliku, lecz pisze kod Python
+    analizujący pełny DataFrame — dokładny dla dowolnej liczby wierszy.
+    """
+    # Ustal ścieżkę do pliku danych
     if not filename:
-        return ""
+        return {"success": False, "error": "Brak wybranego pliku. Przetwórz plik Excel przed zadaniem pytania."}
 
     if filename == os.path.basename(OUTPUT_FILE):
         file_path = OUTPUT_FILE
@@ -186,63 +200,29 @@ async def wczytaj_kontekst_pliku(filename: str) -> str:
         file_path = os.path.join(UPLOAD_DIR, filename)
 
     if not os.path.exists(file_path):
-        return ""
+        return {"success": False, "error": f"Nie znaleziono pliku: {filename}"}
 
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(executor, _wczytaj_excel_sync, file_path)
-
-
-@app.post("/api/chat")
-async def chat_with_ollama(
-    prompt: str = Form(...),
-    model: str = Form("qwen2.5:3b"),
-    filename: str = Form("")
-):
-    """
-    Asynchroniczny endpoint czatu z Ollama.
-    Czyta Excel w osobnym wątku i wywołuje Ollama przez async httpx.
-    """
     try:
-        # Wczytaj dane z pliku asynchronicznie
-        kontekst_danych = await wczytaj_kontekst_pliku(filename)
+        loop = asyncio.get_event_loop()
+        odpowiedz = await loop.run_in_executor(
+            executor,
+            _run_pandas_agent_sync,
+            file_path,
+            prompt,
+            model
+        )
+        return {"success": True, "response": odpowiedz}
 
-        if kontekst_danych:
-            system_prompt = (
-                "Jesteś asystentem analitycznym firmy Pol-Skone. "
-                "Odpowiadaj wyłącznie po polsku, zwięźle i konkretnie. "
-                "Analizujesz raport wad produkcyjnych. "
-                "Poniżej znajdują się dane z raportu — opieraj odpowiedzi TYLKO na tych danych.\n\n"
-                + kontekst_danych
-            )
-        else:
-            system_prompt = (
-                "Jesteś asystentem analitycznym firmy Pol-Skone. "
-                "Odpowiadaj wyłącznie po polsku. "
-                "Aktualnie żaden plik nie jest załadowany — "
-                "powiedz użytkownikowi, że powinien wgrać i przetworzyć plik Excel po lewej stronie."
-            )
-
-        payload = {
-            "model": model,
-            "prompt": prompt,
-            "system": system_prompt,
-            "stream": False
-        }
-
-        # Asynchroniczne wywołanie Ollama — nie blokuje serwera
-        async with httpx.AsyncClient(timeout=180.0) as client:
-            response = await client.post(OLLAMA_API_URL, json=payload)
-            response.raise_for_status()
-
-        data = response.json()
-        return {"success": True, "response": data.get("response", "Brak odpowiedzi od modelu.")}
-
-    except httpx.ConnectError:
-        return {"success": False, "error": "Nie można połączyć się z Ollama. Upewnij się, że aplikacja Ollama jest uruchomiona (http://localhost:11434)."}
-    except httpx.ReadTimeout:
-        return {"success": False, "error": "Ollama nie odpowiedziała w czasie 3 minut. Spróbuj zadać krótsze pytanie."}
+    except RuntimeError as e:
+        err = str(e)
+        if "ConnectError" in err or "Connection refused" in err or "connect" in err.lower():
+            return {
+                "success": False,
+                "error": "Nie można połączyć się z Ollama. Upewnij się, że aplikacja Ollama jest uruchomiona (http://localhost:11434)."
+            }
+        return {"success": False, "error": f"Błąd podczas analizy danych: {err}"}
     except Exception as e:
-        return {"success": False, "error": f"Błąd podczas komunikacji z modelem: {str(e)}"}
+        return {"success": False, "error": f"Nieoczekiwany błąd: {str(e)}"}
 
 
 if __name__ == "__main__":

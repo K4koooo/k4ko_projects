@@ -7,3 +7,7 @@ python-multipart
 requests
 jinja2
 httpx
+langchain-experimental
+langchain-community
+tabulate
+huggingface-hub
