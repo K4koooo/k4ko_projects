@@ -7,10 +7,16 @@ import shutil
 import os
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-from czyszczenie_wad import transformuj_raport
 import httpx
 import pandas as pd
+import sys
 
+# Dodajemy !FINALE do ścieżki
+FINALE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if FINALE_DIR not in sys.path:
+    sys.path.append(FINALE_DIR)
+
+from append_reports import process_single_file, OUTPUT_FILE, ARCHIVE_DIR
 app = FastAPI(title="Pol-Skone Analiza Wad")
 
 # Pula wątków do operacji blokujących (I/O plik, pandas)
@@ -38,6 +44,30 @@ async def read_root(request: Request):
     )
 
 
+def process_and_append(file_location):
+    try:
+        # 1. Przetworzenie pliku
+        df_new = process_single_file(file_location)
+        
+        # 2. Dodanie do pliku głównego
+        if os.path.exists(OUTPUT_FILE):
+            df_master = pd.read_excel(OUTPUT_FILE)
+            df_master = pd.concat([df_master, df_new], ignore_index=True)
+        else:
+            df_master = df_new
+            
+        df_master.to_excel(OUTPUT_FILE, index=False)
+        
+        # 3. Przeniesienie do archiwum
+        filename = os.path.basename(file_location)
+        archive_path = os.path.join(ARCHIVE_DIR, filename)
+        shutil.move(file_location, archive_path)
+        
+        return {"success": True, "records_count": len(df_new)}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+
+
 @app.post("/api/process-file")
 async def process_file(file: UploadFile = File(...)):
     global active_processed_file
@@ -47,30 +77,24 @@ async def process_file(file: UploadFile = File(...)):
         with open(file_location, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
-        # Wywołaj skrypt czyszczący w osobnym wątku (operacja blokująca)
-        base_name = os.path.splitext(file.filename)[0]
-        output_filename = f"{base_name}_forPowerFI.xlsx"
-        output_path = os.path.join(UPLOAD_DIR, output_filename)
-
+        # Wywołaj skrypt czyszczący i dołączający
         loop = asyncio.get_event_loop()
         result = await loop.run_in_executor(
-            executor, transformuj_raport, file_location, output_path
+            executor, process_and_append, file_location
         )
 
         if result.get("success"):
-            active_processed_file = output_filename
+            active_processed_file = os.path.basename(OUTPUT_FILE)
             return {
                 "success": True,
-                "message": f"Znaleziono {result['records_count']} unikalnych zgłoszeń. Plik gotowy do pobrania.",
-                "download_url": f"/api/download/{output_filename}",
-                "processed_filename": output_filename
+                "message": f"Dodano do bazy pomyślnie. Nowe wiersze: {result['records_count']}.",
+                "processed_filename": active_processed_file
             }
         else:
-            return {"success": False, "error": result.get("error", "Nieznany błąd podczas przetwarzania.")}
+            return {"success": False, "error": result.get("error", "Nieznany błąd.")}
 
     except Exception as e:
         return {"success": False, "error": str(e)}
-
 
 @app.get("/api/current-file")
 async def get_current_file():
@@ -101,6 +125,16 @@ async def get_current_file():
 
     return {"filename": ""}
 
+
+@app.get("/api/download/master")
+async def download_master():
+    if os.path.exists(OUTPUT_FILE):
+        return FileResponse(
+            path=OUTPUT_FILE,
+            filename=os.path.basename(OUTPUT_FILE),
+            media_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
+    return {"error": "Plik główny nie istnieje."}
 
 @app.get("/api/download/{filename}")
 async def download_file(filename: str):
@@ -146,7 +180,11 @@ async def wczytaj_kontekst_pliku(filename: str) -> str:
     if not filename:
         return ""
 
-    file_path = os.path.join(UPLOAD_DIR, filename)
+    if filename == os.path.basename(OUTPUT_FILE):
+        file_path = OUTPUT_FILE
+    else:
+        file_path = os.path.join(UPLOAD_DIR, filename)
+
     if not os.path.exists(file_path):
         return ""
 

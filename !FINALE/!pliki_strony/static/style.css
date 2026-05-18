@@ -61,17 +61,10 @@ body {
     gap: 12px;
 }
 
-.logo-box {
-    background: var(--ps-green);
-    color: white;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 18px;
-    border-radius: 8px;
+.main-logo {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-area h1 {
@@ -97,62 +90,20 @@ body {
 }
 
 /* ==================================
-   ZAKŁADKI (TABS)
-   ================================== */
-.tabs-nav {
-    display: inline-flex;
-    background: rgba(0, 0, 0, 0.04);
-    padding: 6px;
-    border-radius: 16px;
-    margin-bottom: 8px;
-    width: 100%;
-    max-width: 600px;
-    align-self: center; /* Wyśrodkowanie */
-}
-
-.tab-btn {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    padding: 14px 24px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: none;
-}
-
-.tab-btn:hover:not(.active) {
-    color: var(--text-main);
-    background: rgba(255, 255, 255, 0.4);
-}
-
-.tab-btn.active {
-    background: var(--card-bg);
-    color: var(--ps-green);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* ==================================
    UKŁAD GŁÓWNY (MAIN)
    ================================== */
 .main-content {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 180px); /* Odejmujemy więcej na nawigację zakładek */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    height: calc(100vh - 120px);
 }
 
-/* Zakładki są chowane poprzez style="display: none;" z JS, a aktywne rozciągają się na max */
-.tab-panel {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
 }
 
 .panel {
@@ -192,10 +143,10 @@ body {
 }
 
 .upload-area {
-    margin: 24px;
+    margin: 16px 24px;
     border: 2px dashed var(--border-color);
     border-radius: var(--radius);
-    padding: 40px 20px;
+    padding: 20px;
     text-align: center;
     background: var(--bg-color);
     transition: all 0.3s ease;

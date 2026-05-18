@@ -45,7 +45,7 @@ def parse_month_year(filename):
 # 1. Konfiguracja ścieżek
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_DIR = os.path.join(BASE_DIR, 'Nowe_Raporty_ERP')
-OUTPUT_FILE = os.path.join(BASE_DIR, 'Wszystkie_Wady_PowerBI.xlsx')
+OUTPUT_FILE = os.path.join(BASE_DIR, 'Skumulowany_Raport_Wad_PowerBI.xlsx')
 ARCHIVE_DIR = os.path.join(BASE_DIR, 'Archiwum_Raportow')
 
 # Upewniamy się, że foldery istnieją

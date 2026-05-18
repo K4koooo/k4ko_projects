@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/style.css?v=5">
     <!-- Ikony -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,32 +18,20 @@
         <!-- Pasek nawigacji -->
         <header class="top-nav">
             <div class="logo-area">
-                <div class="logo-box">PS</div>
+                <img src="/static/logo_polskone.png" alt="Pol-Skone Logo" class="main-logo">
                 <h1>Pol-Skone <span>Raporty</span></h1>
-            </div>
-            <div class="user-area">
-                <span class="user-avatar"><i class="fas fa-user"></i></span>
             </div>
         </header>
 
-        <!-- Nawigacja zakładek -->
-        <div class="tabs-nav">
-            <button class="tab-btn active" data-target="upload-panel">
-                <i class="fas fa-file-excel"></i> Oczyszczanie Pliku
-            </button>
-            <button class="tab-btn" data-target="chat-panel">
-                <i class="fas fa-robot"></i> Analityk AI
-            </button>
-        </div>
+
 
         <!-- Główna zawartość -->
         <main class="main-content">
 
-            <!-- Zakładka: Przetwarzanie plików -->
-            <section class="panel tab-panel active" id="upload-panel">
+            <!-- Panel Przetwarzania plików -->
+            <section class="panel" id="upload-panel">
                 <div class="panel-header">
                     <h2><i class="fas fa-file-excel"></i> Przetwarzanie Raportów</h2>
-                    <p>Wgraj plik .xls lub .xlsx, aby oczyścić dane pod Power BI.</p>
                 </div>
 
                 <div class="upload-area" id="drop-zone">
@@ -54,6 +42,7 @@
                         Wybierz plik
                     </label>
                     <input type="file" id="file-input" accept=".xls,.xlsx" hidden>
+                    <p class="upload-hint" style="margin-top: 15px; font-size: 0.9em; color: #666;">Wgraj plik .xls, aby oczyścić dane i dodać je do raportu.</p>
                     <div id="file-info" class="file-info hidden">
                         <i class="fas fa-file"></i> <span id="file-name">nazwa_pliku.xlsx</span>
                     </div>
@@ -63,20 +52,20 @@
                     <button id="process-btn" class="btn-success w-100" disabled>
                         <i class="fas fa-magic"></i> Uruchom czyszczenie
                     </button>
+                    <a id="download-master-btn" href="/api/download/master" class="btn-outline w-100" style="margin-top: 12px; display: block; text-align: center;">
+                        <i class="fas fa-file-excel"></i> Pobierz skumulowany raport
+                    </a>
                 </div>
 
                 <!-- Status i Podsumowanie -->
                 <div id="status-box" class="status-box hidden">
                     <div class="loader hidden" id="loader"></div>
                     <p id="status-message" class="status-message"></p>
-                    <a id="download-link" href="#" class="btn-outline hidden w-100">
-                        <i class="fas fa-download"></i> Pobierz plik Power BI
-                    </a>
                 </div>
             </section>
 
-            <!-- Zakładka: Chatbot Ollama -->
-            <section class="panel tab-panel" id="chat-panel" style="display: none;">
+            <!-- Panel Chatbota Ollama -->
+            <section class="panel" id="chat-panel">
                 <div class="panel-header chat-header">
                     <div class="chat-title-group">
                         <h2><i class="fas fa-robot"></i> Asystent AI</h2>
@@ -110,7 +99,7 @@
         </main>
     </div>
 
-    <script src="/static/script.js"></script>
+    <script src="/static/script.js?v=4"></script>
 </body>
 
 </html>

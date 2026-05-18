@@ -9,33 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusBox = document.getElementById('status-box');
     const loader = document.getElementById('loader');
     const statusMessage = document.getElementById('status-message');
-    const downloadLink = document.getElementById('download-link');
     const chatContext = document.getElementById('chat-context');
 
-    // --- Elementy Zakładek ---
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanels = document.querySelectorAll('.tab-panel');
 
-    // Obsługa przełączania zakładek
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Usuń klasę active z innych przycisków
-            tabBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            // Ukryj wszystkie panele
-            tabPanels.forEach(panel => {
-                panel.style.display = 'none';
-            });
-
-            // Pokaż docelowy panel
-            const targetId = btn.getAttribute('data-target');
-            const targetPanel = document.getElementById(targetId);
-            if (targetPanel) {
-                targetPanel.style.display = 'flex';
-            }
-        });
-    });
 
     let selectedFile = null;
     let processedFilename = ''; // nazwa pliku po przetworzeniu (_forPowerFI.xlsx)
@@ -96,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Ukryj ewentualne poprzednie wyniki
             statusBox.classList.add('hidden');
-            downloadLink.classList.add('hidden');
             
             // Zaktualizuj kontekst w czacie
             chatContext.textContent = fileName;
@@ -121,9 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
         processBtn.disabled = true;
         statusBox.classList.remove('hidden');
         loader.classList.remove('hidden');
-        statusMessage.textContent = 'Trwa przetwarzanie i czyszczenie danych...';
+        statusMessage.textContent = 'Trwa dodawanie do bazy...';
         statusMessage.style.color = 'var(--text-main)';
-        downloadLink.classList.add('hidden');
 
         const formData = new FormData();
         formData.append('file', selectedFile);
@@ -141,8 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.success) {
                 statusMessage.textContent = data.message;
                 statusMessage.style.color = 'var(--ps-green-dark)';
-                downloadLink.href = data.download_url;
-                downloadLink.classList.remove('hidden');
                 
                 // Zapamiętaj nazwę przetworzonego pliku — serwer zwraca ją bezpośrednio
                 processedFilename = data.processed_filename || `${selectedFile.name.substring(0, selectedFile.name.lastIndexOf('.'))}_forPowerFI.xlsx`;
