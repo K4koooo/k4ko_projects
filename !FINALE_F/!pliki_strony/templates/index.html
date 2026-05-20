@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol-Skone | Analiza Wad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css?v=5">
+    <!-- Ikony -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Pasek nawigacji -->
+        <header class="top-nav">
+            <div class="logo-area">
+                <img src="/static/logo_polskone.png" alt="Pol-Skone Logo" class="main-logo">
+                <h1>Pol-Skone <span>Raporty</span></h1>
+            </div>
+        </header>
+
+
+
+        <!-- Główna zawartość -->
+        <main class="main-content">
+
+            <!-- Panel Przetwarzania plików -->
+            <section class="panel" id="upload-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-file-excel"></i> Przetwarzanie Raportów</h2>
+                </div>
+
+                <div class="upload-area" id="drop-zone">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h3>Upuść plik tutaj</h3>
+                    <p>lub</p>
+                    <label class="btn-primary" for="file-input">
+                        Wybierz plik
+                    </label>
+                    <input type="file" id="file-input" accept=".xls,.xlsx" hidden>
+                    <p class="upload-hint" style="margin-top: 15px; font-size: 0.9em; color: #666;">Wgraj plik .xls, aby oczyścić dane i dodać je do raportu.</p>
+                    <div id="file-info" class="file-info hidden">
+                        <i class="fas fa-file"></i> <span id="file-name">nazwa_pliku.xlsx</span>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <button id="process-btn" class="btn-success w-100" disabled>
+                        <i class="fas fa-magic"></i> Uruchom czyszczenie
+                    </button>
+                    <a id="download-master-btn" href="/api/download/master" class="btn-outline w-100" style="margin-top: 12px; display: block; text-align: center;">
+                        <i class="fas fa-file-excel"></i> Pobierz skumulowany raport
+                    </a>
+                </div>
+
+                <!-- Status i Podsumowanie -->
+                <div id="status-box" class="status-box hidden">
+                    <div class="loader hidden" id="loader"></div>
+                    <p id="status-message" class="status-message"></p>
+                </div>
+            </section>
+
+            <!-- Panel Chatbota Ollama -->
+            <section class="panel" id="chat-panel">
+                <div class="panel-header chat-header">
+                    <div class="chat-title-group">
+                        <h2><i class="fas fa-robot"></i> Asystent AI</h2>
+                        <span class="badge">Model: Ollama (qwen2.5:3b)</span>
+                    </div>
+                    <div class="context-info">
+                        <i class="fas fa-database"></i> Aktualny plik: <span id="chat-context">Brak pliku</span>
+                    </div>
+                </div>
+
+                <div class="chat-window" id="chat-window">
+                    <div class="message ai-message">
+                        <div class="message-content">
+                            Witaj! Jestem asystentem analitycznym Pol-Skone. Wgraj raport i zadaj mi pytanie odnośnie
+                            danych dotyczących wad produkcyjnych.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <form id="chat-form" class="chat-form">
+                        <input type="text" id="chat-input" placeholder="Zadaj pytanie asystentowi..."
+                            autocomplete="off">
+                        <button type="submit" class="btn-send" id="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="/static/script.js?v=4"></script>
+</body>
+
+</html>
